@@ -65,17 +65,13 @@ function App() {
 
 
           <div className='hero-info'>
-            <h3>{heroData.name}</h3>
+            <h2>{heroData.name}</h2>
             <p>{heroData.description || 'No description available'}</p>
           </div>
 
           <div className='hero'>
-            <div className="hero-img">
-              <img src={`${heroData.thumbnail.path}.${heroData.thumbnail.extension}`} alt="" />
-            </div>
-            <div className="hero-name">
-              <h3>{heroData.name}</h3>
-            </div>
+              <img src={`${heroData.thumbnail.path}.${heroData.thumbnail.extension}`} alt="Hero Image" />
+              <p>{heroData.name}</p>
           </div>
 
         </div>

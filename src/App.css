@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Orbitron", serif;
 }
 
 body{
@@ -79,17 +80,86 @@ body::before{
   align-items: center;
 }
 
+.hero-name{
+  position: relative;
+}
+
+/* .hero-name::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: red;
+} */
+
 .hero-info p{
-  color: white;
+  color: rgb(255, 255, 255);
+}
+
+.hero{
+  width: 100%;
+  max-width: 300px;
+  overflow: hidden;
+  position: relative;
 }
 
 .hero img{
-  width: 200px;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
 }
+
+.hero:hover img{
+  transform: scale(1.05); 
+}
+
+.hero p {
+  text-align: center;
+  position: relative;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: gray;
+  border-top: 2px solid red;
+  overflow: hidden;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.hero p::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0 !important;
+  background: red;
+  z-index: -10;
+  transition: height 0.3s ease;
+}
+
+.hero:hover p::before {
+  height: 100% !important;
+}
+
 
 .row{
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .row{
+    flex-direction: column-reverse;
+  }
+  
 }
