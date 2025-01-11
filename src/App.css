@@ -7,7 +7,6 @@
 
 body{
   margin: 0;
-  padding: 0;
   padding: 8rem;
   box-sizing: border-box;
   width: 100vw;
@@ -163,6 +162,17 @@ body::before{
 @media (max-width: 768px) {
   .row{
     flex-direction: column-reverse;
+  }
+
+  body{
+    padding: 4rem;
+  }
+  
+}
+
+@media (max-width: 540px) {
+  body{
+    padding: 2rem;
   }
   
 }
