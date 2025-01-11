@@ -13,6 +13,7 @@ body{
   width: 100vw;
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
 }
 
 body::before{
@@ -26,6 +27,7 @@ body::before{
   opacity: 0.8;
   filter: blur(3px); 
   z-index: -1;
+  
 }
 
 .logo{
@@ -115,13 +117,13 @@ body::before{
   transform: scale(1.05); 
 }
 
-.hero p {
+.hero p{
   text-align: center;
   position: relative;
   margin: 0;
   width: 100%;
   height: 100%;
-  background: gray;
+  background: linear-gradient(-45deg, transparent 10px, gray 0);
   border-top: 2px solid red;
   overflow: hidden;
   color: white;
@@ -132,28 +134,29 @@ body::before{
   z-index: 1;
 }
 
-.hero p::before {
+.hero p::before{
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 0 !important;
-  background: red;
+  height: 0;
+  background: linear-gradient(-45deg, transparent 10px, red 0);
   z-index: -10;
-  transition: height 0.3s ease;
+  overflow: hidden;
+  transition: height 0.1s ease;
 }
 
-.hero:hover p::before {
-  height: 100% !important;
+.hero:hover p::before{
+  height: 100%;
 }
-
 
 .row{
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
   gap: 1rem;
 }
 
