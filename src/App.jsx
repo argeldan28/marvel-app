@@ -26,7 +26,7 @@ function App() {
       const timestamp = new Date().getTime();
       const hash = generateHash(timestamp);
 
-      const apiUrl = `https://gateway.marvel.com/v1/public/characters?nameStartsWith=${heroName}&ts=${timestamp}&apikey=${publicKey}&hash=${hash}`;
+      const apiUrl = `https://gateway.marvel.com/v1/public/characters?name=${heroName}&ts=${timestamp}&apikey=${publicKey}&hash=${hash}`;
 
       try {
         const res = await axios.get(apiUrl);
